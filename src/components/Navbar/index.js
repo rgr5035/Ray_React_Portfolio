@@ -1,44 +1,45 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 
-function Navbar() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
+
+export default function ButtonAppBar() {
+  const classes = useStyles();
+
   return (
-    <header class="mdc-top-app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <button
-            class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
-            aria-label="Open navigation menu"
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
           >
-            menu
-          </button>
-          <span class="mdc-top-app-bar__title">Page title</span>
-        </section>
-        <section
-          class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
-          role="toolbar"
-        >
-          <button
-            class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-            aria-label="Favorite"
-          >
-            favorite
-          </button>
-          <button
-            class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-            aria-label="Search"
-          >
-            search
-          </button>
-          <button
-            class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-            aria-label="Options"
-          >
-            more_vert
-          </button>
-        </section>
-      </div>
-    </header>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
-
-export default Navbar;
