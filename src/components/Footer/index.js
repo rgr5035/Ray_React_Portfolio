@@ -2,10 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import FolderIcon from "@material-ui/icons/Folder";
-import RestoreIcon from "@material-ui/icons/Restore";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+import FaceBookIcon from "@material-ui/icons/Facebook";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles({
   root: {
@@ -28,24 +27,22 @@ export default function LabelBottomNavigation() {
       className={classes.root}
     >
       <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<RestoreIcon />}
+        label="Facebook"
+        href="https://www.facebook.com/robert.r.ray.98"
+        target="_blank"
+        icon={<FaceBookIcon />}
       />
       <BottomNavigationAction
-        label="Favorites"
-        value="favorites"
-        icon={<FavoriteIcon />}
+        label="GitHub"
+        href="https://github.com/rgr5035"
+        target="_blank"
+        icon={<GitHubIcon />}
       />
       <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
-      />
-      <BottomNavigationAction
-        label="Folder"
-        value="folder"
-        icon={<FolderIcon />}
+        label="LinkedIn"
+        href="https://www.linkedin.com/in/robertgordonray/"
+        target="_blank"
+        icon={<LinkedInIcon />}
       />
     </BottomNavigation>
   );
